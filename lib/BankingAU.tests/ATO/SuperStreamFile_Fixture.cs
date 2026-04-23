@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Banking.AU.tests.ATO
+namespace Banking.AU.Tests.ATO
 {
     [TestFixture]
     public class SuperStreamFile_Fixture

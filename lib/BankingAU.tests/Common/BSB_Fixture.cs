@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Banking.AU.tests.Common
+namespace Banking.AU.Tests.Common
 {
     [TestFixture]
     public class Bsb_Fixture

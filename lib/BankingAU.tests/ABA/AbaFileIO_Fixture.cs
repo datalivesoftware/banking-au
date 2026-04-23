@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Banking.AU.tests.ABA
+#pragma warning disable CA2000 // Dispose objects before losing scope
+namespace Banking.AU.Tests.ABA
 {
 	[TestFixture]
     public class AbaFileIO_Fixture
@@ -227,3 +228,4 @@ namespace Banking.AU.tests.ABA
         }
     }
 }
+#pragma warning restore CA2000 // Dispose objects before losing scope

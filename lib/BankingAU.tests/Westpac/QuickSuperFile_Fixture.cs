@@ -6,7 +6,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Banking.AU.tests.Westpac
+#pragma warning disable CA2000 // Dispose objects before losing scope
+namespace Banking.AU.Tests.Westpac
 {
     [TestFixture]
     public class QuickSuperFile_Fixture
@@ -245,3 +246,4 @@ YourFileReference,,01-Jan-15,01-Jul-15,EmployerID,PayrollID,,FamilyName,GivenNam
         }
     }
 }
+#pragma warning restore CA2000 // Dispose objects before losing scope

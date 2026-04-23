@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Banking.AU.tests.Westpac
+namespace Banking.AU.Tests.Westpac
 {
     [TestFixture]
     public class QuickSuperValidator_Fixture
