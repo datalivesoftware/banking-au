@@ -1,15 +1,12 @@
 ﻿using Banking.AU.Common;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Banking.AU.Tests.Common
 {
-    [TestFixture]
+    [TestClass]
     public class Bsb_Fixture
     {
-        [Test]
+        [TestMethod]
         public void Encode_bsb()
         {
             // Arrange
@@ -21,7 +18,7 @@ namespace Banking.AU.Tests.Common
             Assert.AreEqual("737-123", bsb);
         }
 
-        [Test]
+        [TestMethod]
         public void Encode_empty_bsb()
         {
             // Arrange

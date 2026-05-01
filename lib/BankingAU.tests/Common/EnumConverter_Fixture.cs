@@ -1,16 +1,13 @@
-﻿using Banking.AU.Common.Converters;
-using Banking.AU.ABA.Records;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Banking.AU.ABA.Records;
+using Banking.AU.Common.Converters;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Banking.AU.Tests.Common
 {
-    [TestFixture]
+    [TestClass]
     public class EnumConverter_Fixture
     {
-        [Test]
+        [TestMethod]
         public void From_indicator()
         {
             // Arrange
@@ -23,7 +20,7 @@ namespace Banking.AU.Tests.Common
             Assert.AreEqual("N", result);
         }
 
-        [Test]
+        [TestMethod]
         public void To_indicator()
         {
             // Arrange
@@ -36,7 +33,7 @@ namespace Banking.AU.Tests.Common
             Assert.AreEqual(Indicator.DividendPaid, result);
         }
 
-        [Test]
+        [TestMethod]
         public void From_transaction_code()
         {
             // Arrange
@@ -49,7 +46,7 @@ namespace Banking.AU.Tests.Common
             Assert.AreEqual("50", result);
         }
 
-        [Test]
+        [TestMethod]
         public void To_transaction_code()
         {
             // Arrange

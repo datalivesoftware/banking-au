@@ -1,15 +1,12 @@
 ﻿using Banking.AU.Common.Converters;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Banking.AU.Tests.Common
 {
-    [TestFixture]
+    [TestClass]
     public class CurrencyConverter_Fixture
     {
-        [Test]
+        [TestMethod]
         public void From_decimal()
         {
             // Arrange
@@ -22,7 +19,7 @@ namespace Banking.AU.Tests.Common
             Assert.AreEqual("123456", result);
         }
 
-        [Test]
+        [TestMethod]
         public void To_decimal()
         {
             // Arrange
@@ -34,7 +31,7 @@ namespace Banking.AU.Tests.Common
             // Assert
             Assert.AreEqual(1234.56m, result);
         }
-        [Test]
+        [TestMethod]
         public void From_decimal_unsigned()
         {
             // Arrange
@@ -47,7 +44,7 @@ namespace Banking.AU.Tests.Common
             Assert.AreEqual("123456", result);
         }
 
-        [Test]
+        [TestMethod]
         public void To_decimal_unsigned()
         {
             // Arrange

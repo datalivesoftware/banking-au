@@ -1,15 +1,12 @@
 ﻿using Banking.AU.Common.Converters;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Banking.AU.Tests.Common
 {
-    [TestFixture]
+    [TestClass]
     public class StringFormatConverter_Fixture
     {
-        [Test]
+        [TestMethod]
         public void From_decimal()
         {
             // Arrange
@@ -22,7 +19,7 @@ namespace Banking.AU.Tests.Common
             Assert.AreEqual("1234.57", result);
         }
 
-        [Test]
+        [TestMethod]
         public void To_decimal()
         {
             // Arrange
@@ -34,7 +31,7 @@ namespace Banking.AU.Tests.Common
             // Assert
             Assert.AreEqual(1234.57m, result);
         }
-        [Test]
+        [TestMethod]
         public void From_decimal_to_integer()
         {
             // Arrange
@@ -47,7 +44,7 @@ namespace Banking.AU.Tests.Common
             Assert.AreEqual("1235", result);
         }
 
-        [Test]
+        [TestMethod]
         public void To_integer_from_decimal()
         {
             // Arrange
@@ -57,7 +54,7 @@ namespace Banking.AU.Tests.Common
             var result = c.StringToField("1235");
 
             // Assert
-            Assert.AreEqual(1235.0m, result);
+            Assert.AreEqual(1235, result);
         }
     }
 }

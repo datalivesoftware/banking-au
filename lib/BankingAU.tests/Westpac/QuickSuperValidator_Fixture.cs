@@ -1,13 +1,10 @@
-﻿using Banking.AU.Westpac.QuickSuper;
-using FileHelpers;
-using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using Banking.AU.Westpac.QuickSuper;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Banking.AU.Tests.Westpac
 {
-    [TestFixture]
+    [TestClass]
     public class QuickSuperValidator_Fixture
     {
         /// <summary>
@@ -27,7 +24,7 @@ namespace Banking.AU.Tests.Westpac
             };
         }
 
-        [Test]
+        [TestMethod]
         public void Vanilla_invalid()
         {
             // Arrange
@@ -39,7 +36,7 @@ namespace Banking.AU.Tests.Westpac
             Assert.AreEqual(5, errors.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void Bare_minimum_valid()
         {
             // Arrange
@@ -61,7 +58,7 @@ namespace Banking.AU.Tests.Westpac
             Assert.AreEqual(0, errors.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void All_valid()
         {
             // Arrange

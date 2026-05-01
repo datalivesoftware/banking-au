@@ -1,12 +1,8 @@
-﻿using Banking.AU.ATO;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Banking.AU.Tests.ATO
 {
-    [TestFixture]
+    [TestClass]
     public class SuperStreamFile_Fixture
     {
     }

@@ -1,19 +1,18 @@
-﻿using Banking.AU.ABA;
-using Banking.AU.ABA.Records;
-using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Banking.AU.ABA;
+using Banking.AU.ABA.Records;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 #pragma warning disable CA2000 // Dispose objects before losing scope
 namespace Banking.AU.Tests.ABA
 {
-	[TestFixture]
+	[TestClass]
     public class AbaFileIO_Fixture
     {
-		[Test]
+		[TestMethod]
 		public void Write_vanilla_stream()
         {
 			// Arrange
@@ -27,7 +26,7 @@ namespace Banking.AU.Tests.ABA
             io.Write(writer, file);
 
 			// Assert
-            Assert.Greater(stream.Length, 0);
+            Assert.IsTrue(stream.Length > 0);
             var reader = new StreamReader(stream);
             stream.Position = 0;
             var line = reader.ReadLine();
@@ -40,7 +39,7 @@ namespace Banking.AU.Tests.ABA
             stream.Dispose();
         }
 
-        [Test]
+        [TestMethod]
         public void Write_detailed_stream()
         {
             // Arrange
@@ -84,7 +83,7 @@ namespace Banking.AU.Tests.ABA
             io.Write(writer, file);
 
             // Assert
-            Assert.Greater(stream.Length, 0);
+            Assert.IsTrue(stream.Length > 0);
             var reader = new StreamReader(stream);
             stream.Position = 0;
             var line = reader.ReadLine();
@@ -97,7 +96,7 @@ namespace Banking.AU.Tests.ABA
             stream.Dispose();
         }
 
-		[Test]
+		[TestMethod]
 		public void Read_detailed_stream()
         {
 			// Arrange
@@ -123,7 +122,7 @@ namespace Banking.AU.Tests.ABA
             Assert.IsNotNull(file.FileTotalRecord);
         }
 
-		[Test]
+		[TestMethod]
 		public void Read_detailed_file()
 		{
 			// Arrange
@@ -148,7 +147,7 @@ namespace Banking.AU.Tests.ABA
             File.Delete(path);
         }
 
-        [Test]
+        [TestMethod]
         public void Read_returns_stream()
         {
             // Arrange
@@ -178,7 +177,7 @@ namespace Banking.AU.Tests.ABA
             Assert.IsNotNull(file.FileTotalRecord);
         }
 
-        [Test]
+        [TestMethod]
         public void Read_throws_on_incorrect_record_width()
         {
             // Arrange
@@ -195,13 +194,19 @@ namespace Banking.AU.Tests.ABA
             stream.Position = 0;
             var reader = new StreamReader(stream);
 
-            // Act - done by assertion, below.
-
-            // Assert
-            Assert.That(() => io.Read(reader), Throws.Exception);
+            // Act & Assert
+            try
+            {
+                io.Read(reader);
+                Assert.Fail("Expected an exception to be thrown.");
+            }
+            catch (Exception)
+            {
+                // Expected
+            }
         }
 
-		[Test]
+		[TestMethod]
 		public void Read_file_empty_indicator()
 		{
 			// Arrange

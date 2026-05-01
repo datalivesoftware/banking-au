@@ -1,15 +1,12 @@
-﻿using Banking.AU.Westpac.QuickSuper;
-using FileHelpers;
-using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using Banking.AU.Westpac.QuickSuper;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 #pragma warning disable CA2000 // Dispose objects before losing scope
 namespace Banking.AU.Tests.Westpac
 {
-    [TestFixture]
+    [TestClass]
     public class QuickSuperFile_Fixture
     {
         /// <summary>
@@ -29,7 +26,7 @@ namespace Banking.AU.Tests.Westpac
             };
         }
 
-        [Test]
+        [TestMethod]
         public void Write_stream()
         {
             // Arrange
@@ -60,7 +57,7 @@ namespace Banking.AU.Tests.Westpac
 ", data);
         }
 
-        [Test]
+        [TestMethod]
         public void Write_file()
         {
             // Arrange
@@ -91,7 +88,7 @@ namespace Banking.AU.Tests.Westpac
 ", data);
         }
 
-        [Test]
+        [TestMethod]
         public void Read_stream()
         {
             // Arrange
@@ -111,7 +108,7 @@ namespace Banking.AU.Tests.Westpac
             stream.Dispose();
         }
 
-        [Test]
+        [TestMethod]
         public void Read_file()
         {
             // Arrange
@@ -128,7 +125,7 @@ namespace Banking.AU.Tests.Westpac
             Assert.AreEqual(1, file.Records.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void Dollar_amounts_two_decimal_limit_write()
         {
             // Arrange
@@ -156,7 +153,7 @@ namespace Banking.AU.Tests.Westpac
 ", data);
         }
 
-        [Test]
+        [TestMethod]
         public void String_data_with_comma_write()
         {
             // Arrange
@@ -200,7 +197,7 @@ YourFileReference,,01-Jan-15,01-Jul-15,EmployerID,PayrollID,,FamilyName,GivenNam
 ", data);
         }
 
-        [Test]
+        [TestMethod]
         public void String_data_with_newline_write()
         {
             // Arrange
